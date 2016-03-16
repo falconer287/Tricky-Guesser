@@ -1,10 +1,11 @@
+
 def evaluate_response(question):
-    if "guess" in question:
+    if "guess" in question: #identify when user is guessing the answer rather than asking questions
         print "Nope! Guess again."
     else:
-        if len(question) % 2 == 0 and len(question) > 0:
+        if len(question) % 2 == 0 and len(question) > 0: #answers yes if even number of characters in question
             print "Yes!"
-        elif len(question) % 2 == 1 and len(question) > 0:
+        elif len(question) % 2 == 1 and len(question) > 0: #answers no if odd number of characters in question
             print "Nope!"
         else:
             print "That's not a valid question!"
@@ -13,7 +14,7 @@ user_prompt = "Welcome to the Trikky Guessr Game! We'll pick a person, place or 
 user_input = raw_input(user_prompt)
 num = 0
 
-while num!= 20:
+while num!= 20: #defines that 20 inputs may be made
     num += 1
     evaluate_response(user_input)
     print num
