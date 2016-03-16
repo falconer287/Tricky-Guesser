@@ -1,18 +1,21 @@
-
-a = "Welcome to the Trikky Guessr Game! We'll pick a person, place or thing, and you try to guess it. Ask yes or no questions, and when you're ready to guess the answer, enter: guess ____. Have fun!"
-ask = raw_input(a)
-
-def question_answer(question):
+def evaluate_response(question):
     if "guess" in question:
         print "Nope! Guess again."
     else:
-        if len(question) % 2 == 0 and len(ask) > 0:
+        if len(question) % 2 == 0 and len(question) > 0:
             print "Yes!"
-        elif len(question) % 2 == 1 and len(ask) > 0:
+        elif len(question) % 2 == 1 and len(question) > 0:
             print "Nope!"
         else:
             print "That's not a valid question!"
+            
+user_prompt = "Welcome to the Trikky Guessr Game! We'll pick a person, place or thing, and you try to guess it. Ask yes or no questions, and when you're ready to guess the answer, enter: guess ____. Have fun!"
+user_input = raw_input(user_prompt)
+num = 0
 
-while ask != "Hey! This is a trick!":
-    question_answer(ask)
-    ask = raw_input()
+while num!= 20:
+    num += 1
+    evaluate_response(user_input)
+    print num
+    user_input= raw_input()
+    
